@@ -22,7 +22,7 @@ Router.onRouteChangeError = () => {
   NProgress.done();
 };
 
-import Link from "next/link";
+import { Link } from "../../routes";
 
 export default class NavBar extends React.Component {
   constructor(props) {
@@ -42,15 +42,15 @@ export default class NavBar extends React.Component {
     return (
       <div>
         <Navbar color="dark" className="text-white" dark expand="md">
-          <Link href="/">
+          <Link route="/">
             <NavbarBrand>Profolio</NavbarBrand>
           </Link>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav navbar>
               <NavItem>
-                <Link href="/about">
-                  <NavLink>About</NavLink>
+                <Link route="/portfolios ">
+                  <NavLink>Portfolios</NavLink>
                 </Link>
               </NavItem>
             </Nav>
