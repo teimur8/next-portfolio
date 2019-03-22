@@ -1,3 +1,22 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "../node_modules/nprogress/nprogress.css";
 @import "fonts";
+
+// ------------- INDEX PAGE -------------
+.cover {
+  background-image: url("/static/images/background-index.png"),
+    linear-gradient(45deg, #00aeef 0%, #096fb9 100%);
+  position: relative;
+}
+
+.wrapper {
+  min-height: calc(100vh - 56px);
+  position: relative;
+}
+
+.hero-section {
+  background-image: url(/static/images/section-1.jpg);
+  background-repeat: no-repeat;
+  min-height: 600px;
+  background-size: cover;
+}
