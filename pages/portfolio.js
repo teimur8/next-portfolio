@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Link from "next/link";
 import { withRouter } from "next/router";
 
 class Portfolios extends React.Component {
@@ -16,8 +15,24 @@ class Portfolios extends React.Component {
 
   render() {
     const { post } = this.props;
-    // debugger;
-    return <div>{post.title}</div>;
+
+    return (
+      <div className="layout-container">
+        <main className={`cover`}>
+          <div className="wrapper">
+            <div className="main-section">
+              <div className="container text-white pt-5">
+                <div className="row">
+                  <div className="col">
+                    <div>{post.title}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    );
   }
 }
 

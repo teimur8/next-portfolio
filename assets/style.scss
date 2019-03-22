@@ -2,6 +2,38 @@
 @import "../node_modules/nprogress/nprogress.css";
 @import "fonts";
 
+#nprogress .bar {
+  background: $white !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: $white !important;
+  border-left-color: $white !important;
+}
+
+.navbar.custom {
+  .navbar-brand {
+    font-size: 1.7rem;
+  }
+  .nav-link {
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 1);
+}
+
+// node_modules/bootstrap/scss/_variables.scss
+@include media-breakpoint-down(sm) {
+  .navbar {
+    background-color: $dark;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
 // ------------- INDEX PAGE -------------
 .cover {
   background-image: url("/static/images/background-index.png"),
@@ -10,8 +42,10 @@
 }
 
 .wrapper {
-  min-height: calc(100vh - 56px);
+  //   min-height: calc(100vh - 56px);
+  min-height: 100vh;
   position: relative;
+  padding-top: 2rem;
 }
 
 .hero-section {

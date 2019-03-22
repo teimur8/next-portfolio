@@ -14,16 +14,28 @@ export default class Portfolios extends React.Component {
   render() {
     const { posts } = this.props;
     return (
-      <div>
-        <ul>
-          {posts.map(item => (
-            <li key={item.id}>
-              <Link route={`/portfolio/${item.id}`}>
-                <a>{item.title}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <div className="layout-container">
+        <main className={`cover`}>
+          <div className="wrapper">
+            <div className="main-section">
+              <div className="container text-white pt-5">
+                <div className="row">
+                  <div className="col">
+                    <ul>
+                      {posts.map(item => (
+                        <li key={item.id}>
+                          <Link route={`/portfolio/${item.id}`}>
+                            <a>{item.title}</a>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
     );
   }

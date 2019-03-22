@@ -3,7 +3,6 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink
@@ -41,13 +40,13 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" className="text-white" dark expand="md">
+        <Navbar className="text-white custom fixed-top" dark expand="md">
           <Link route="/">
-            <NavbarBrand>Profolio</NavbarBrand>
+            <a className="navbar-brand text-white font-weight-bold">Profolio</a>
           </Link>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav navbar>
+            <Nav navbar className="ml-auto">
               <NavItem>
                 <Link route="/portfolios ">
                   <NavLink>Portfolios</NavLink>

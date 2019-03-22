@@ -11,7 +11,7 @@ export default class Index extends React.Component {
     return (
       <div className="layout-container">
         <main className={`cover`}>
-          <div className="wrapper">
+          <div className="wrapper d-block d-md-flex justify-content-center align-items-center">
             <div className="main-section">
               <div className="container text-white pt-5">
                 <div className="row">
