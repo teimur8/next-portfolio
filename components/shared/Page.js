@@ -6,10 +6,11 @@ import "../../assets/style.scss";
 
 class Page extends Component {
   render() {
+    const { auth } = this.props;
     return (
       <>
         <Meta />
-        <NavBar />
+        <NavBar auth={auth} />
         <>{this.props.children}</>
       </>
     );

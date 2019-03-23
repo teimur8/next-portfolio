@@ -22,6 +22,7 @@ Router.onRouteChangeError = () => {
 };
 
 import { Link } from "../../routes";
+import auth0 from "../../services/auth0";
 
 export default class NavBar extends React.Component {
   constructor(props) {
@@ -37,7 +38,15 @@ export default class NavBar extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
+
+  logout() {
+    auth0.logout();
+    Router.push("/");
+  }
+
   render() {
+    const { auth } = this.props;
+
     return (
       <div>
         <Navbar className="text-white custom fixed-top" dark expand="md">
@@ -52,6 +61,20 @@ export default class NavBar extends React.Component {
                   <NavLink>Portfolios</NavLink>
                 </Link>
               </NavItem>
+
+              {!auth.isAuth && (
+                <NavItem>
+                  <NavLink onClick={auth0.login}>Login</NavLink>
+                </NavItem>
+              )}
+              {auth.isAuth && (
+                <>
+                  <NavItem>
+                    <NavLink onClick={this.logout}>Logout</NavLink>
+                  </NavItem>
+                  <span className="navbar-text">{auth.user.given_name}</span>
+                </>
+              )}
             </Nav>
           </Collapse>
         </Navbar>
